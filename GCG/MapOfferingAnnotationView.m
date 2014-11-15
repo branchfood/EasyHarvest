@@ -21,14 +21,12 @@
 
 - (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self)
     {
         self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, 30, 30);
         UIView *smallCircle = [[UIView alloc] initWithFrame:self.bounds];
         smallCircle.layer.cornerRadius = (smallCircle.bounds.size.width)/2.0f;
         smallCircle.layer.masksToBounds = YES;
-        smallCircle.backgroundColor = [UIColor greenColor];
         smallCircle.alpha = 0.4f;
         [self addSubview:smallCircle];
         smallCircle.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -45,6 +43,9 @@
     }
     return self;
 }
+
+
+
 
 - (void)touchUpInside:(UIButton *)sender{
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];

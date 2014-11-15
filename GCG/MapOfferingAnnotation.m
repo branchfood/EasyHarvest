@@ -7,6 +7,9 @@
 //
 
 #import "MapOfferingAnnotation.h"
+
+
+
 @implementation MapOfferingAnnotation
 @synthesize coordinate;
 
@@ -18,11 +21,33 @@
 }
 
 - (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d andTitle:(NSString *)titleString{
+    return [self initWith2DCoordinate:coordinate2d andTitle:titleString andFarmType:FarmTypeOther];
+}
+- (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d andTitle:(NSString *)titleString andFarmType:(FarmType)farmType{
     if (self = [super init]) {
         _title = titleString;
         coordinate = coordinate2d;
+        self.backgroundColor = [self colorForFarmType:farmType];
     }
     return self;
+}
+
+- (UIColor *)colorForFarmType:(FarmType)farmType{
+    switch (farmType) {
+        case FarmTypeBasic:
+            return [UIColor greenColor];
+            break;
+        case FarmTypeCorporateEducational:
+            return [UIColor yellowColor];
+            break;
+        case FarmTypeOther:
+            return [UIColor purpleColor];
+            break;
+            
+        default:
+            return [UIColor blackColor];
+            break;
+    }
 }
 
 @end
