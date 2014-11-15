@@ -77,7 +77,7 @@
             if (arc4random() % 2 == 0) {
                 type = arc4random() % 2 == 0 ? FarmTypeBasic : FarmTypeOther;
             }
-            MapOfferingAnnotation *mapOfferingAnnotation = [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(((NSNumber *)[coordinates firstObject]).doubleValue, ((NSNumber *)[coordinates lastObject]).doubleValue) andTitle:[NSString stringWithFormat:@"Farm #%d", arc4random()] andFarmType:type];
+            MapOfferingAnnotation *mapOfferingAnnotation = [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(((NSNumber *)[coordinates firstObject]).doubleValue, ((NSNumber *)[coordinates lastObject]).doubleValue) andTitle:[NSString stringWithFormat:@"Farm #%d", arc4random()] andFarmType:type andTotalYield:(arc4random()%3500)/10 andSquareFootage:arc4random() % 100];
             [array addObject:mapOfferingAnnotation];
         }
         _dummyAnnotations = array;

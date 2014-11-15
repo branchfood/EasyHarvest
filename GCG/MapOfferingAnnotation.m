@@ -32,6 +32,26 @@
     return self;
 }
 
+- (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d andTitle:(NSString *)titleString andFarmType:(FarmType)farmType andTotalYield:(CGFloat)yield{
+    if (self = [super init]) {
+        _title = titleString;
+        coordinate = coordinate2d;
+        self.backgroundColor = [self colorForFarmType:farmType];
+        _subtitle = [NSString stringWithFormat:@"Yield: %.2flbs", yield];
+    }
+    return self;
+}
+
+- (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d andTitle:(NSString *)titleString andFarmType:(FarmType)farmType andTotalYield:(CGFloat)yield andSquareFootage:(int)squareFeet{
+    if (self = [super init]) {
+        _title = titleString;
+        coordinate = coordinate2d;
+        self.backgroundColor = [self colorForFarmType:farmType];
+        _subtitle = [NSString stringWithFormat:@"%d ft²  |  %.2flbs", squareFeet, yield];
+    }
+    return self;
+}
+
 - (UIColor *)colorForFarmType:(FarmType)farmType{
     switch (farmType) {
         case FarmTypeBasic:

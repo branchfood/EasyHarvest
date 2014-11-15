@@ -38,7 +38,7 @@
         _leftCalloutButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [_leftCalloutButton addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
         self.leftCalloutAccessoryView = _leftCalloutButton;
-        
+   
         _smallCircle.layer.shadowOpacity = 1.0f;
         _smallCircle.layer.shadowRadius = 2.0f;
     }
