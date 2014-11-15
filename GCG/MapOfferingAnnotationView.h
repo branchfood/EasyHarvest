@@ -16,5 +16,5 @@
 + (UIImage *)annotationImage;
 
 
-
+- (void)setCircleColor:(UIColor *)color;
 @end

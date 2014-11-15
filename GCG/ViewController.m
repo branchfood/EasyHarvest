@@ -71,8 +71,7 @@
         else {
             view.annotation = annotation;
         }
-        
-        view.backgroundColor = ((MapOfferingAnnotationView *)annotation).backgroundColor;
+ [view setCircleColor: ((MapOfferingAnnotationView *)annotation).backgroundColor];
         return view;
     }
     else {
