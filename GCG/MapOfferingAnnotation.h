@@ -10,7 +10,8 @@
 @interface MapOfferingAnnotation : NSObject <MKAnnotation> {
     CLLocationCoordinate2D coordinate;
 }
-
+@property (nonatomic, copy) NSString *title;
 - (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d;
+- (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d andTitle:(NSString *)titleString;
 
 @end

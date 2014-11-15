@@ -32,6 +32,10 @@
         smallCircle.layer.shadowOffset = CGSizeMake(2, 2);
         smallCircle.layer.borderWidth = 2;
         smallCircle.layer.borderColor = [UIColor brownColor].CGColor;
+        self.leftCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
+        
+        smallCircle.layer.shadowOpacity = 1.0f;
+        smallCircle.layer.shadowRadius = 2.0f;
     }
     return self;
 }

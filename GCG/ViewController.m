@@ -22,8 +22,8 @@
 - (NSArray *)dummyAnnotations{
     if (!_dummyAnnotations) {
         _dummyAnnotations = @[
-                              [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(23, 2)],
-                              [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(2, 23)]
+                              [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(23, 2) andTitle:@"Little house"],
+                              [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(2, 23) andTitle:@"On the prairie"]
                               ];
     }
     return _dummyAnnotations;
@@ -45,7 +45,6 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -56,9 +55,12 @@
     if ([annotation isKindOfClass:[MapOfferingAnnotation class]])
     {
         MapOfferingAnnotationView *view = (MapOfferingAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:TC_MAP_ANNOTATION_VIEW_IDENTIFIER];
+        
         if (!view) {
             view = [[MapOfferingAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:TC_MAP_ANNOTATION_VIEW_IDENTIFIER];
-            [view sizeToFit];
+            view.canShowCallout = YES;
+
+            
         }
         else {
             view.annotation = annotation;

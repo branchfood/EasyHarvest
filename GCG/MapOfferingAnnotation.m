@@ -17,4 +17,12 @@
     return self;
 }
 
+- (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d andTitle:(NSString *)titleString{
+    if (self = [super init]) {
+        _title = titleString;
+        coordinate = coordinate2d;
+    }
+    return self;
+}
+
 @end
