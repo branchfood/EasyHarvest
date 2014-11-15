@@ -8,8 +8,6 @@
 
 #import "MapOfferingAnnotationView.h"
 #import "MapOfferingAnnotation.h"
-#import "Location.h"
-#import "UIColor+TKCategory.h"
 
 @implementation MapOfferingAnnotationView
 
@@ -23,10 +21,13 @@
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        UIImageView *image = [[UIImageView alloc] initWithImage:[[self class] annotationImage]];
-        self.frame = image.frame;
-        self.center = image.center;
-        [self addSubview:image];
+        self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, 15, 15);
+        UIView *smallCircle = [[UIView alloc] initWithFrame:self.bounds];
+        smallCircle.layer.cornerRadius = smallCircle.bounds.size.width/2.0f;
+        smallCircle.layer.masksToBounds = YES;
+        smallCircle.backgroundColor = [UIColor blueColor];
+        smallCircle.alpha = 0.5f;
+        [self addSubview:smallCircle];
     }
     return self;
 }

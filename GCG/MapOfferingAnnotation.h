@@ -6,16 +6,11 @@
 //  Copyright (c) 2014 FindandForm. All rights reserved.
 //
 
-#import <MapKit/MKAnnotation.h>
-
-@class Location;
-
+#import <MapKit/MapKit.h>
 @interface MapOfferingAnnotation : NSObject <MKAnnotation> {
     CLLocationCoordinate2D coordinate;
 }
 
-@property (strong, nonatomic) Location *location;
-
-- (instancetype)initWithLocation:(Location *)location;
+- (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d;
 
 @end

@@ -7,19 +7,12 @@
 //
 
 #import "MapOfferingAnnotation.h"
-#import "Location.h"
-
 @implementation MapOfferingAnnotation
 @synthesize coordinate;
 
-- (instancetype)initWithLocation:(Location *)location
-{
-    if (self = [super init])
-    {
-        self.location = location;
-        CGFloat latitude = [self.location.latitude floatValue];
-        CGFloat longitude = [self.location.longitude floatValue];
-        coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+- (instancetype)initWith2DCoordinate:(CLLocationCoordinate2D)coordinate2d{
+    if (self = [super init]) {
+        coordinate = coordinate2d;
     }
     return self;
 }
