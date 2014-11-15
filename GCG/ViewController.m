@@ -78,21 +78,40 @@
         Amy Fine	Basic
         Cadbury Commons	Corporate/ Educational
         Deidre Patch	Other: Urban Garden Consulting
-        Ellen Blanch	Other: Urban Garden Consulting*/
+        Ellen Blanch	Other: Urban Garden Consulting
+      
+      
+      Adrienne Carroll	Basic	Farmer in Training
+      BGood Bedford	Restaurant Maintenance
+      Brass Union	Basic	Restaurant Maintenance
+      Cecilia Stone	Basic	Service Visit
+      Hannah Elementary School (Beverly Schools)	Corporate/ Educational	Basic*/
         
-    /*NSArray dummyData = @[
+    NSArray *dummyData = @[
                           @[@"Heather Lang", @(FarmTypeBasic)],
-                          @[@"Amy Fine]
-                          ]*/
+                          @[@"Amy Fine", @(FarmTypeBasic)],
+                          @[@"Cadbury Commons", @(FarmTypeCorporateEducational)],
+                          @[@"Deidre Patch", @(FarmTypeOther)],
+                          @[@"Ellen Blanch", @(FarmTypeOther)],
+                          @[@"Adrienne Carroll", @(FarmTypeBasic)],
+                          @[@"BGood Bedford", @(FarmTypeCorporateEducational)],
+                          @[@"Brass Union Basic", @(FarmTypeOther)],
+                          @[@"Cecilia Stone", @(FarmTypeBasic)],
+                          @[@"Hannah Elementary School", @(FarmTypeCorporateEducational)]
+                          ];
  
         NSMutableArray *array = [NSMutableArray array];
         int index = 0;
         for (NSArray *coordinates in self.coordinateArray) {
+            if (index > dummyData.count - 1) {
+                break;
+            }
             FarmType type = arc4random() % 2 == 0 ? FarmTypeBasic : FarmTypeCorporateEducational;
             if (arc4random() % 2 == 0) {
                 type = arc4random() % 2 == 0 ? FarmTypeBasic : FarmTypeOther;
             }
-            MapOfferingAnnotation *mapOfferingAnnotation = [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(((NSNumber *)[coordinates firstObject]).doubleValue, ((NSNumber *)[coordinates lastObject]).doubleValue) andTitle:[NSString stringWithFormat:@"Farm #%d", arc4random()] andFarmType:type andTotalYield:(arc4random()%3500)/10 andSquareFootage:arc4random() % 100];
+            FarmType nonRandomtype = (FarmType)((NSNumber *)[dummyData[index] lastObject]).integerValue;
+            MapOfferingAnnotation *mapOfferingAnnotation = [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(((NSNumber *)[coordinates firstObject]).doubleValue, ((NSNumber *)[coordinates lastObject]).doubleValue) andTitle:[dummyData[index] firstObject] andFarmType:nonRandomtype andTotalYield:(arc4random()%3500)/10 andSquareFootage:arc4random() % 100];
             [array addObject:mapOfferingAnnotation];
             
             
@@ -114,6 +133,10 @@
     for (UIView *view in self.legendCircles) {
         view.layer.cornerRadius = view.bounds.size.height/2.0f;
         view.layer.masksToBounds = YES;
+    }
+    
+    for (UIView *suview in self.legendContainer.subviews) {
+        suview.userInteractionEnabled = NO;
     }
     
 }
