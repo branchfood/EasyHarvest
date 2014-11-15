@@ -150,6 +150,17 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
+    /*MapOfferingAnnotationView *offeringAnnotationView = (MapOfferingAnnotationView *)view;
+    MapOfferingAnnotation *annotation = (MapOfferingAnnotation *)offeringAnnotationView.annotation;
+    CLLocationCoordinate2D coordinate = annotation.coordinate;
+    
+    MKCoordinateRegion region;
+    region.center.latitude = annotation.coordinate.latitude;
+    region.center.longitude = annotation.coordinate.longitude;
+    region.span.latitudeDelta =  coordinate.latitude;
+    region.span.longitudeDelta = coordinate.longitude;
+    
+    [mapView setRegion:region animated:YES];*/
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
@@ -191,10 +202,16 @@
     }];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NAME" object:nil];
+
+
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+{
+    if(views.count > 0) {
+        MKAnnotationView *view = [views objectAtIndex:0];
+        CGRect visibleRect = self.mapView.annotationVisibleRect;
+        MKCoordinateRegion visibleRegion = [self.mapView convertRect:visibleRect toRegionFromView:view.superview];
+        [self.mapView setRegion:visibleRegion animated:YES];
+    }
 }
-
-
 
 @end

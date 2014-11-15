@@ -50,12 +50,6 @@
 
 
 - (void)touchUpInside:(UIButton *)sender{
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
-    CGRect newFrame = tableView.frame;
-    newFrame.size = CGSizeMake(200, 400);
-    newFrame.origin.x = newFrame.origin.x - newFrame.size.width;
-    tableView.frame = newFrame;
-    [self.leftCalloutAccessoryView addSubview:tableView];
 }
 
 - (void)setCircleColor:(UIColor *)color{
