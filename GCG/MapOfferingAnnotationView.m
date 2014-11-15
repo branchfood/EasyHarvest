@@ -33,7 +33,7 @@
         _smallCircle.layer.shadowColor = [UIColor blackColor].CGColor;
         _smallCircle.layer.shadowOffset = CGSizeMake(2, 2);
         _smallCircle.layer.borderWidth = 2;
-        _smallCircle.layer.borderColor = [UIColor brownColor].CGColor;
+        _smallCircle.layer.borderColor = [UIColor whiteColor].CGColor;
         
         _leftCalloutButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         [_leftCalloutButton addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
