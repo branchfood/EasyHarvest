@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSArray *dummyAnnotations;
 @property (strong, nonatomic) NSArray *array;
 @property (strong, nonatomic) NSArray *coordinateArray;
+@property (weak, nonatomic) IBOutlet UIView *legendContainer;
 
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *legendCircles;
 @end
@@ -153,6 +154,18 @@
         return nil;
     }
     
+}
+
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated{
+    [UIView animateWithDuration:0.4f animations:^{
+        self.legendContainer.alpha = 0.0f;
+    }];
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    [UIView animateWithDuration:0.8f animations:^{
+        self.legendContainer.alpha = 0.9f;
+    }];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

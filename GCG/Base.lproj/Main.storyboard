@@ -77,6 +77,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="legendContainer" destination="I6E-5k-PGz" id="zmB-ME-wjW"/>
                         <outlet property="mapView" destination="b0k-d7-lRK" id="Ct6-92-0dO"/>
                         <outletCollection property="legendCircles" destination="2T0-20-3Ke" id="2qb-Ic-Da0"/>
                         <outletCollection property="legendCircles" destination="bbH-V0-xIr" id="3gq-wt-tEq"/>
