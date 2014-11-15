@@ -16,6 +16,8 @@
 		1AFA2B611A17B54C0081731D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AFA2B451A17B4410081731D /* Main.storyboard */; };
 		1AFA2B621A17B54C0081731D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AFA2B4A1A17B4410081731D /* LaunchScreen.xib */; };
 		1AFA2B641A17B5560081731D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFA2B631A17B5560081731D /* MapKit.framework */; };
+		1AFA2B691A17B91F0081731D /* MapOfferingAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA2B661A17B91F0081731D /* MapOfferingAnnotation.m */; };
+		1AFA2B6A1A17B91F0081731D /* MapOfferingAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFA2B681A17B91F0081731D /* MapOfferingAnnotationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,10 @@
 		1AFA2B561A17B4410081731D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AFA2B571A17B4410081731D /* GCGTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCGTests.m; sourceTree = "<group>"; };
 		1AFA2B631A17B5560081731D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1AFA2B651A17B91F0081731D /* MapOfferingAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOfferingAnnotation.h; sourceTree = "<group>"; };
+		1AFA2B661A17B91F0081731D /* MapOfferingAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOfferingAnnotation.m; sourceTree = "<group>"; };
+		1AFA2B671A17B91F0081731D /* MapOfferingAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOfferingAnnotationView.h; sourceTree = "<group>"; };
+		1AFA2B681A17B91F0081731D /* MapOfferingAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOfferingAnnotationView.m; sourceTree = "<group>"; };
 		3427B763625693D62B9422EF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E4985EC3643B8DCCBA505ABC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +106,10 @@
 		1AFA2B3A1A17B4410081731D /* GCG */ = {
 			isa = PBXGroup;
 			children = (
+				1AFA2B651A17B91F0081731D /* MapOfferingAnnotation.h */,
+				1AFA2B661A17B91F0081731D /* MapOfferingAnnotation.m */,
+				1AFA2B671A17B91F0081731D /* MapOfferingAnnotationView.h */,
+				1AFA2B681A17B91F0081731D /* MapOfferingAnnotationView.m */,
 				1AFA2B3F1A17B4410081731D /* AppDelegate.h */,
 				1AFA2B401A17B4410081731D /* AppDelegate.m */,
 				1AFA2B421A17B4410081731D /* ViewController.h */,
@@ -285,6 +295,8 @@
 				1AFA2B441A17B4410081731D /* ViewController.m in Sources */,
 				1AFA2B411A17B4410081731D /* AppDelegate.m in Sources */,
 				1AFA2B3E1A17B4410081731D /* main.m in Sources */,
+				1AFA2B691A17B91F0081731D /* MapOfferingAnnotation.m in Sources */,
+				1AFA2B6A1A17B91F0081731D /* MapOfferingAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

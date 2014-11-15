@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
 
-@interface ViewController ()
+@interface ViewController () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.mapView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,4 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    UIView *tooltip = [[UIView alloc] initWithFrame:CGRectMake(5, 5, 5, 5)];
+    return tooltip;
+    
+}
 @end
