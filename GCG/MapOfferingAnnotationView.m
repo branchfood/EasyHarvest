@@ -8,6 +8,9 @@
 
 #import "MapOfferingAnnotationView.h"
 #import "MapOfferingAnnotation.h"
+@interface MapOfferingAnnotationView()
+@property (nonatomic, strong) UIButton *leftCalloutButton;
+@end
 
 @implementation MapOfferingAnnotationView
 
@@ -32,12 +35,24 @@
         smallCircle.layer.shadowOffset = CGSizeMake(2, 2);
         smallCircle.layer.borderWidth = 2;
         smallCircle.layer.borderColor = [UIColor brownColor].CGColor;
-        self.leftCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
+        
+        _leftCalloutButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [_leftCalloutButton addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+        self.leftCalloutAccessoryView = _leftCalloutButton;
         
         smallCircle.layer.shadowOpacity = 1.0f;
         smallCircle.layer.shadowRadius = 2.0f;
     }
     return self;
+}
+
+- (void)touchUpInside:(UIButton *)sender{
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
+    CGRect newFrame = tableView.frame;
+    newFrame.size = CGSizeMake(200, 400);
+    newFrame.origin.x = newFrame.origin.x - newFrame.size.width;
+    tableView.frame = newFrame;
+    [self.leftCalloutAccessoryView addSubview:tableView];
 }
 
 @end
