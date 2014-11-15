@@ -21,13 +21,17 @@
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, 15, 15);
+        self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, 30, 30);
         UIView *smallCircle = [[UIView alloc] initWithFrame:self.bounds];
-        smallCircle.layer.cornerRadius = smallCircle.bounds.size.width/2.0f;
+        smallCircle.layer.cornerRadius = (smallCircle.bounds.size.width)/2.0f;
         smallCircle.layer.masksToBounds = YES;
-        smallCircle.backgroundColor = [UIColor blueColor];
-        smallCircle.alpha = 0.5f;
+        smallCircle.backgroundColor = [UIColor greenColor];
+        smallCircle.alpha = 0.4f;
         [self addSubview:smallCircle];
+        smallCircle.layer.shadowColor = [UIColor blackColor].CGColor;
+        smallCircle.layer.shadowOffset = CGSizeMake(2, 2);
+        smallCircle.layer.borderWidth = 2;
+        smallCircle.layer.borderColor = [UIColor brownColor].CGColor;
     }
     return self;
 }
