@@ -22,12 +22,48 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="pZq-bP-A5Z"/>
                                 </connections>
                             </mapView>
-                            <view contentMode="scaleToFill" id="I6E-5k-PGz">
-                                <rect key="frame" x="192" y="396" width="183" height="251"/>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" id="I6E-5k-PGz">
+                                <rect key="frame" x="176" y="396" width="183" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VXD-mZ-Auy">
-                                        <rect key="frame" x="38" y="8" width="107" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Farm Legend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VXD-mZ-Auy">
+                                        <rect key="frame" x="38" y="10" width="107" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.40000000000000002" contentMode="scaleToFill" id="2T0-20-3Ke">
+                                        <rect key="frame" x="22" y="52" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view alpha="0.40000000000000002" contentMode="scaleToFill" id="bbH-V0-xIr">
+                                        <rect key="frame" x="22" y="117" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view alpha="0.40000000000000002" contentMode="scaleToFill" id="eiH-3z-sAV">
+                                        <rect key="frame" x="22" y="184" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X6d-rT-r2c">
+                                        <rect key="frame" x="60" y="56" width="86" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Education" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LuT-3r-fLn">
+                                        <rect key="frame" x="60" y="121" width="86" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professional" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IX1-it-nxQ">
+                                        <rect key="frame" x="60" y="188" width="94" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,6 +78,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="b0k-d7-lRK" id="Ct6-92-0dO"/>
+                        <outletCollection property="legendCircles" destination="2T0-20-3Ke" id="2qb-Ic-Da0"/>
+                        <outletCollection property="legendCircles" destination="bbH-V0-xIr" id="3gq-wt-tEq"/>
+                        <outletCollection property="legendCircles" destination="eiH-3z-sAV" id="AA3-YC-IcB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSArray *array;
 @property (strong, nonatomic) NSArray *coordinateArray;
 
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *legendCircles;
 @end
 
 
@@ -71,7 +72,20 @@
                               [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(2, 23) andTitle:@"On the prairie" andFarmType:FarmTypeBasic]
                             ];*/
         
+     /*   Cynny Friedman	Basic
+        Heather Lang	Basic
+        Amy Fine	Basic
+        Cadbury Commons	Corporate/ Educational
+        Deidre Patch	Other: Urban Garden Consulting
+        Ellen Blanch	Other: Urban Garden Consulting*/
+        
+    /*NSArray dummyData = @[
+                          @[@"Heather Lang", @(FarmTypeBasic)],
+                          @[@"Amy Fine]
+                          ]*/
+ 
         NSMutableArray *array = [NSMutableArray array];
+        int index = 0;
         for (NSArray *coordinates in self.coordinateArray) {
             FarmType type = arc4random() % 2 == 0 ? FarmTypeBasic : FarmTypeCorporateEducational;
             if (arc4random() % 2 == 0) {
@@ -79,6 +93,11 @@
             }
             MapOfferingAnnotation *mapOfferingAnnotation = [[MapOfferingAnnotation alloc] initWith2DCoordinate:CLLocationCoordinate2DMake(((NSNumber *)[coordinates firstObject]).doubleValue, ((NSNumber *)[coordinates lastObject]).doubleValue) andTitle:[NSString stringWithFormat:@"Farm #%d", arc4random()] andFarmType:type andTotalYield:(arc4random()%3500)/10 andSquareFootage:arc4random() % 100];
             [array addObject:mapOfferingAnnotation];
+            
+            
+            
+            
+            index++;
         }
         _dummyAnnotations = array;
     }
@@ -91,7 +110,10 @@
     self.mapView.delegate = self;
     
     [self.mapView addAnnotations:self.dummyAnnotations];
-    
+    for (UIView *view in self.legendCircles) {
+        view.layer.cornerRadius = view.bounds.size.height/2.0f;
+        view.layer.masksToBounds = YES;
+    }
     
 }
 
@@ -136,4 +158,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NAME" object:nil];
 }
+
+
+
 @end
